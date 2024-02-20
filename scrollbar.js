@@ -11,21 +11,10 @@
 (function() {
     'use strict';\
     var css = `
-        ::-webkit-scrollbar {
-            width: 16px;
-            height: 16px;
-
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: rgb(5, 5, 5);
-            border-radius: 8px;
-        }
-        ::-webkit-scrollbar-thumb:active {
-            background: rgb(10, 0 ,0);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgb(10, 10 ,10);
-        }
+        ::-webkit-scrollbar { width: 16px; height: 16px; }
+        ::-webkit-scrollbar-thumb { background-color: rgb(5, 5, 5); border-radius: 8px; }
+        ::-webkit-scrollbar-thumb:active { background: rgb(10, 0 ,0); }
+        ::-webkit-scrollbar-thumb:hover { background: rgb(10, 10 ,10); }
     `;
 
     var style = document.createElement('style');
