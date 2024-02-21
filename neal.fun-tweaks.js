@@ -1,27 +1,31 @@
 // ==UserScript==
 // @name         neal.fun tweaks.
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      beta-0.6
 // @description  collection of tweaks for the games on neal.fun
 // @author       aRandomMenno
 // @match        https://neal.fun/*
+// @icon         https://github.com/aRandomMenno/TamperMonkeScripts/blob/master/logo.svg
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
-    
-    var css = ` @media screen and (min-width:  1150px) {
-        .sidebar[data-v-8889ef30] { width:  500px; }
-        .logo[data-v-8889ef30] { right:  530px; width:  85px; }
-        .side-controls[data-v-8889ef30] { right:  515px; } } 
-    `;
+
+    // Function to apply styles
+    function applyStyles(selector, styles) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => { Object.assign(element.style, styles); });
+    }
+
+    // Function to be called after the page has loaded
+    function infiniteCraft() {
+        // The styles to be applied
+        applyStyles('.sidebar', { width: '500px' });
+        applyStyles('.logo', { right: '530px', width: '85px' });
+        applyStyles('.side-controls', { right: '515px' });
+    }
 
     // Check if the current URL matches the desired pattern
-    if (window.location.href.includes('neal.fun/infinite-craft/')) {
-        var style = document.createElement('style');
-        style.type = 'text/css';
-        style.appendChild(document.createTextNode(css));
-        document.head.appendChild(style);
-    }
+    if (window.location.href.includes('neal.fun/infinite-craft/')) { window.onload = infiniteCraft; }
 })();
