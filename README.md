@@ -1,2 +1,3 @@
 # TamperMonkeScripts
-This repository is used to dump all the Tamper Monkey scripts I make / steal. (with original credits)
+
+- This repository contains al the tampermonkey scripts I use/ have used.
