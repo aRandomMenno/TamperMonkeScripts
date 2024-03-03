@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';\
+    'use strict';
     var css = `<any css here>`;
 
     var style = document.createElement('style');
